@@ -1,11 +1,11 @@
-:root{
-    --ff:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+:root {
+    --ff: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --clr: #ffff;
     --fw-bold: 700;
 }
 
 /*Reset de propiedades por defecto de los navegadores*/
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,24 +18,20 @@ body {
 }
 
 header {
---bg-primary: hsl(207, 50%, 30%);   
+    --bg-primary: hsl(207, 50%, 30%);
 
 
-display: flex;
-position: relative;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-background-color: var(--bg-primary);
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-primary);
 
 
 }
 
-.header__logo {
-    position: absolute;
-    left: 150px;
-    top: 0px;
-}
+
 
 .header__logo img {
     width: 120px;
@@ -44,24 +40,26 @@ background-color: var(--bg-primary);
 }
 
 /*Menu principal*/
+
 .nav__menu {
     height: 50px;
-   
+
 }
+
 .nav__list {
     display: flex;
-    
+
 }
 
 .nav__item {
     padding: 10px 12px;
-   
+
 }
 
 .nav__link {
 
     /*custom property de color*/
-    --clr:#ffff;
+    --clr: #ffff;
 
 
     color: var(--clr);
@@ -77,48 +75,136 @@ background-color: var(--bg-primary);
     padding: 5px;
 }
 
-.sub-menu span{
+.sub-menu span {
     color: #000;
 }
 
 .sub-menu__link {
     color: #000;
-    padding-inline:  5px;
+    padding-inline: 5px;
     text-align: center;
-   
+
 }
 
-.sub-menu__link::after{
+.sub-menu__link::after {
     content: "|";
     margin-left: 5px;
 }
 
 /*Section hero*/
 .hero {
-    background-image: url(img/heroImage.jpg);
+    background-image: url(img/heroImage02.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     height: 50vh;
     padding: 100px 0;
-   
+
 }
 
 .hero__container {
     padding: 40px;
-    background-color: #d5cfcf91;
+    /* background-color: #d5cfcf91; */
 }
+
 .hero__container h1 {
-    color: #962d2d;
+    color: #100d0d;
     font-size: 32px;
     font-family: 900;
+    color: white; /* Establece el color del texto en blanco */
+    text-shadow: 1px 1px 1px rgba(6, 72, 196, 0.9); /* Agrega una sombra al texto para mejorar la legibilidad */
+    font-weight: bold; /* Hace que el texto sea más grueso para mejorar la legibilidad */
 }
+
 .hero__container p {
-    color: #96362d;
+    color: #100d0d;
     font-weight: 500;
+    color: white; /* Establece el color del texto en blanco */
+    text-shadow: 1px 1px 1px rgba(6, 72, 196, 0.9); /* Agrega una sombra al texto para mejorar la legibilidad */
+    font-weight: bold; /* Hace que el texto sea más grueso para mejorar la legibilidad */
 }
+
+.hero__btn {
+    --bg-button: hsl(207, 50%, 30%);
+
+
+    padding: 10px;
+    margin-top: 30px;
+    border: none;
+    background-color: var(--bg-button);
+    color: var(--clr);
+}
+.row {
+    display: flex;
+    position: relative;
+
+}
+
+.header__logo {
+    position: absolute;
+    left: -120px;
+    top: -25px;
+}
+
 @media screen and (max-width: 768px) {
-    .nav__menu, .sub-menu {
+
+
+    .row {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        background-color: antiquewhite;
+
+    }
+
+    .header__logo {
+        position: absolute;
+        left: -60px;
+        top: -5px;
+    }
+
+    .nav__menu,
+    .sub-menu {
         display: none;
     }
+
+    /* Estilos para el botón de menú hamburguesa */
+    .menu-btn {
+        background: none;
+        border: 1px solid rgb(246, 238, 238);
+        cursor: pointer;
+        padding:  5px ;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+
+    }
+
+    .menu-btn__line {
+        background-color: #e6dddd;
+        /* Color de las líneas del ícono */
+        display: block;
+        height: 3px;
+        margin-bottom: 5px;
+        transition: background-color 0.3s ease;
+        width: 20px;
+    }
+
+    /* Estilos para el botón de menú hamburguesa cuando está abierto */
+    .menu-btn.open .menu-btn__line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-btn.open .menu-btn__line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-btn.open .menu-btn__line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Otros estilos */
+    /* Agrega aquí tus estilos para el encabezado, logo, menú principal, etc. */
+
 }

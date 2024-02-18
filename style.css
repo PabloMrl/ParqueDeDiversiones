@@ -26,7 +26,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 background-color: var(--bg-primary);
-padding: 1em;
+
 }
 
 .header__logo {
@@ -63,12 +63,21 @@ padding: 1em;
 /*SubMenu*/
 .sub-menu {
     display: flex;
-   
+    justify-content: center;
+    background-color: #fff;
+    width: 100%;
 }
+
 .sub-menu span{
-    color: var(--clr);
+    color: #000;
 }
+
 .sub-menu__link {
-    color: var(--clr);
+    color: #000;
     padding: 10px 12px;
+}
+
+.sub-menu__link::after{
+    content: "|";
+    margin-left: 5px;
 }
